@@ -21,7 +21,7 @@ EXPOSE 80
 
 RUN rm -rf /etc/apache2/sites-available/000-default.conf
 RUN a2enmod cgid
-COPY 000-default.conf /etc/apache2/sites-avaliable/
+COPY 000-default.conf /etc/apache2/sites-available/
 COPY teste.py /var/www/html
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
