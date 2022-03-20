@@ -7,6 +7,9 @@ ENV TZ=America/Sao_Paulo
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" TZ="Amercia/Sao_Paulo" apt-get -y install tzdata
 RUN apt-get install -y apache2 curl wget git
+RUN apt-get install -y python3 libexpat1 python3-pip libapache2-mod-python 
+
+
 
 
 ENV APACHE_RUN_USER www-data
@@ -16,5 +19,8 @@ ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
 
 EXPOSE 80
+
+RUN rm -rf /etc/apache2/sites-available/000-default.conf
+COPY 000-default.conf /etc/apache2/sites-avaliable/
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
