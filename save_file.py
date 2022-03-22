@@ -1,6 +1,8 @@
 #!/usr/bin/python
 import cgi, os
 import cgitb; cgitb.enable()
+import read_file
+
 form = cgi.FieldStorage()
 # Get filename here.
 fileitem = form['filename']
@@ -21,3 +23,5 @@ Content-Type: text/html\n
 </body>
 </html>
 """ % (message,))
+
+read_file.read(fn)
