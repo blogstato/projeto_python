@@ -27,8 +27,9 @@ RUN a2enmod cgid
 COPY teste.py /var/www/html
 COPY index.html /var/www/html
 COPY save_file.py /var/www/html
-RUN chmod +x /var/www/html/teste.py
-RUN chown www-data.www-data /var/www/html/teste.py
+COPY read_file.py /var/www/html
+RUN chmod +x /var/www/html/teste.py /var/www/html/save_file.py /var/www/html/read_file.py
+RUN chown www-data.www-data /var/www/html/teste.py /var/www/html/save_file.py /var/www/html/read_file.py
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 CMD /usr/sbin/apache2ctl -D FOREGROUND
