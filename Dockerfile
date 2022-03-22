@@ -25,6 +25,8 @@ COPY 000-default.conf /etc/apache2/sites-available/
 RUN a2enmod cgid
 
 COPY teste.py /var/www/html
+COPY index.html /var/www/html
+COPY save_file.py /var/www/html
 RUN chmod +x /var/www/html/teste.py
 RUN chown www-data.www-data /var/www/html/teste.py
 RUN ln -s /usr/bin/python3 /usr/bin/python
