@@ -7,7 +7,7 @@ ENV TZ=America/Sao_Paulo
 RUN apt-get update
 RUN DEBIAN_FRONTEND="noninteractive" TZ="Amercia/Sao_Paulo" apt-get -y install tzdata
 RUN apt-get install -y apache2 curl wget git
-RUN apt-get install -y python3 libexpat1 python3-pip ssl-cert libapache2-mod-wsgi
+RUN apt-get install -y python3 libexpat1 python3-pip ssl-cert libapache2-mod-wsgi-py3
 
 
 
